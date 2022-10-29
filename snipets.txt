@@ -1,0 +1,72 @@
+Медіа запит 
+{
+	"@media": {
+		"scope": "scss, css",
+		"prefix": "med",
+		"body": [
+			"@media screen and ($1-width: $2px) {\n\t$2\n}"
+		]
+	}
+}
+Плавність анімації
+{
+	"transition": {
+		"scope": "css, scss",
+		"prefix": "tra",
+		"body": [
+			"transition: all .$1s ease .$2s;"
+		],
+		"description": "add transition"
+	}
+}
+Створення функції
+{
+	"function": {
+		"scope": "typescript,javascript",
+		"prefix": "fun",
+		"body": [
+			"function $1 ($2) {\n\t$3\n}" 
+		],
+		"description": "function add"
+	}
+}
+Swiper
+{
+	"Swiper": {
+		"scope": "html",
+		"prefix": "swiper",
+		"body": [
+			"<div class=\"$1 swiper\">\n\t<div class=\"swiper-wrapper\">\n\t\t<div class=\"$1 swiper-slide\">\n\t\t\t$2\n\t\t</div>\n\t</div>\n\n\t<div class=\"$1 swiper-pagination\"></div>\n\t<div class=\"$1 swiper-button-prev\"></div>\n\t<div class=\"$1 swiper-button-next\"></div>\n\n\t<div class=\"$1 swiper-scrollbar\"></div>\n</div>"
+		],
+		"description": "swiper add"
+	}
+}
+{
+	"swiper fun": {
+		"scope": "javascript,typescript",
+		"prefix": "swiper",
+		"body": [
+			"export const $1 = new Swiper(\".$2\", {\n\tmodules: [  ],\n});"
+		]
+	}
+}
+Container 
+{
+	"container": {
+		"scope": "html",
+		"prefix": "cont",
+		"body": [
+			"<div class=\"container\">\n\t$1\n</div>"
+		]
+	}
+}
+Вивід інформації в консоль
+{
+	"consoleLog": {
+		"scope": "javascript,typescript",
+		"prefix": "cons",
+		"body": [
+			"console.log($1);",
+		]
+	}
+}
