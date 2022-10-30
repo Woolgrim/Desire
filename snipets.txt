@@ -32,11 +32,11 @@
 }
 Swiper
 {
-	"Swiper": {
+	"function": {
 		"scope": "html",
 		"prefix": "swiper",
 		"body": [
-			"<div class=\"$1 swiper\">\n\t<div class=\"swiper-wrapper\">\n\t\t<div class=\"$1 swiper-slide\">\n\t\t\t$2\n\t\t</div>\n\t</div>\n\n\t<div class=\"$1 swiper-pagination\"></div>\n\t<div class=\"$1 swiper-button-prev\"></div>\n\t<div class=\"$1 swiper-button-next\"></div>\n\n\t<div class=\"$1 swiper-scrollbar\"></div>\n</div>"
+			"<div class=\"$1-swiper swiper\">\n\t<div class=\"$1-wrapper swiper-wrapper\">\n\t\t<div class=\"$1-slide swiper-slide\">\n\t\t\t$2\n\t\t</div>\n\t</div>\n</div>"
 		],
 		"description": "swiper add"
 	}
@@ -46,7 +46,7 @@ Swiper
 		"scope": "javascript,typescript",
 		"prefix": "swiper",
 		"body": [
-			"export const $1 = new Swiper(\".$2\", {\n\tmodules: [  ],\n});"
+			"export const $1 = new Swiper(\".$2\", {\n\tmodules: [  ],\n\tobserver: true,\n\tobserveSlideChildren: true,\n\tobserveParents: true,\n});"
 		]
 	}
 }

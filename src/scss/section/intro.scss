@@ -5,6 +5,8 @@
         @media screen and (max-width: 768px) {
             background: top center / cover no-repeat url("../img/slider/slider_bg.jpg");
         }
+
+        margin-bottom: 60px;
     }
 
     &__swiper {
@@ -108,6 +110,9 @@
 
         &-pagin {
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 30px;
             bottom: 0;
             z-index: 1000;

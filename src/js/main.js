@@ -9,6 +9,3 @@ import * as allSwipers from './function/swiper.js';
 
 //burger menu
 import * as burger from "./function/burger.js"
-
-//burger menu
-import * as delText from "./function/425deltext.js"
