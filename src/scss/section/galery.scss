@@ -1,0 +1,53 @@
+.galery {
+
+    &__inner {
+        margin-bottom: 60px;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+
+        margin-bottom: 40px;
+
+        &-item {
+            font-family: $opens;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 28px;
+            color: #8F8D8D;
+
+            cursor: pointer;
+            padding: 6px 16px;
+
+            border: 1px solid #454647;
+            border-radius: 20px;
+            opacity: 0.5;
+            background: transparent;
+            transition: all .3s ease;
+
+            &:hover,
+            &.active {
+                color: #363838;
+                background: #FFEF35;
+                mix-blend-mode: normal;
+                opacity: 0.5;
+                border: 1px solid #FFEF35;
+            }
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+
+        &-item {
+            width: 100%;
+        }
+    }
+
+    
+}
