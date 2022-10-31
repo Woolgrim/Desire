@@ -17,7 +17,6 @@ export const introSwiper = new Swiper(".intro__swiper", {
 });
 
 export const colectionSwiper = new Swiper(".colection-swiper", {
-    modules: [  ],
     slidesPerView: 5,
     loop: true,
     observer: true,

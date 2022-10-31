@@ -1,0 +1,44 @@
+.banner {
+    &__inner {
+        background: center / cover no-repeat url('../img/call_to_action/bg.jpg');
+        padding: 172px 0 156px;
+        margin-bottom: 60px;
+
+        @media screen and (max-width: 768px) {
+            padding: 70px 0;
+        }
+    }
+
+    &__content {
+        max-width: 730px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    &__title {
+        font-family: $monts;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 80px;
+        color: #363838;
+
+        @media screen and (max-width: 600px) {
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+
+    &__line {
+        background: #6D7278;
+        height: 3px;
+        width: 200px;
+    }
+
+    &__text {
+        font-family: $opens;
+        font-size: 16px;
+        line-height: 28px;
+        color: #5A5A5A;
+    }
+}
