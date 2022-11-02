@@ -51,8 +51,14 @@
             grid-template-columns: repeat(8, 1fr);
             gap: 30px;
 
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+
             &.active {
                 display: grid;
+                z-index: 100;
+                opacity: 1;
             }
 
             @media screen and (max-width: 600px) {

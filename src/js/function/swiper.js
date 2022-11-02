@@ -44,9 +44,12 @@ export const colectionSwiper = new Swiper(".colection-swiper", {
 });
 
 export const blogSwiper = new Swiper(".blog-swiper", {
+    modules: [Autoplay],
     slidesPerView: 2,
     spaceBetween: 30,
-    autoplay: 5000,
+    autoplay: {
+        delay: 5000,
+    },
     loop: true,
     observer: true,
     observeSlideChildren: true,

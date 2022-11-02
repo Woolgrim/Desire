@@ -35,7 +35,7 @@ export const getItem = () => {
             for (let item of galleryBodySection) {
                 (item.classList.contains('-living')) ? item.classList.add('active') : item.classList.remove('active');
             }
-        } else if (targetElement.classList.contains('-bedroom')) {
+        } else if (targetElement.classList.contains('-office')) {
             for (let item of galleryBodySection) {
                 (item.classList.contains('-office')) ? item.classList.add('active') : item.classList.remove('active');
             }

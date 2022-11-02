@@ -713,11 +713,16 @@ html {
   -ms-grid-columns: (1fr)[8];
   grid-template-columns: repeat(8, 1fr);
   gap: 30px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
 }
 
 .gallery__body-section.active {
   display: -ms-grid;
   display: grid;
+  z-index: 100;
+  opacity: 1;
 }
 
 .gallery__body-section.active .gallery__body-item {
