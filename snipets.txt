@@ -14,7 +14,7 @@
 		"scope": "css, scss",
 		"prefix": "tra",
 		"body": [
-			"transition: all .$1s ease .$2s;"
+			"transition: all .$1s ease;"
 		],
 		"description": "add transition"
 	}

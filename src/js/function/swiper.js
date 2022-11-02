@@ -2,7 +2,7 @@
 import Swiper, { Autoplay, Pagination } from "swiper";
 
 export const introSwiper = new Swiper(".intro__swiper", {
-    modules: [ Pagination, Autoplay],
+    modules: [Pagination, Autoplay],
     pagination: {
         el: ".intro__swiper-pagin",
         clickable: true,
@@ -20,7 +20,7 @@ export const colectionSwiper = new Swiper(".colection-swiper", {
     slidesPerView: 5,
     loop: true,
     observer: true,
-   
+
     observeSlideChildren: true,
     observeParents: true,
     breakpoints: {
@@ -41,4 +41,22 @@ export const colectionSwiper = new Swiper(".colection-swiper", {
         }
     }
 
+});
+
+export const blogSwiper = new Swiper(".blog-swiper", {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    autoplay: 5000,
+    loop: true,
+    observer: true,
+    observeSlideChildren: true,
+    observeParents: true,
+    breakpoints: {
+        '320': {
+            slidesPerView: 1,
+        },
+        '768': {
+            slidesPerView: 2,
+        }
+    }
 });
