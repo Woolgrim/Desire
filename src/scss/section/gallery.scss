@@ -182,6 +182,8 @@
             display: none;
             grid-template-columns: repeat(8, 1fr);
             gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
 
             &.active {
                 display: grid;

@@ -1,6 +1,11 @@
 export const galleryTabs = () => {
     const tabBtn = document.querySelectorAll('.gallery__nav-item');
     const tabsItems = document.querySelectorAll('.gallery__body-section');
+    const gallTitle = document.querySelector('.gallery__nav-title');
+    const gallNav = document.querySelector('.gallery__nav');
+    const body = document.querySelector('#body');
+    const gallNavExit = document.querySelector('.gallery__nav-exit');
+    const monWidth = window.innerWidth;
 
     tabBtn.forEach(function (item) {
         onTabClick(item);
@@ -23,31 +28,38 @@ export const galleryTabs = () => {
                 item.classList.add('active');
                 curentTabb.classList.add('active');
             }
+
+            if (monWidth <= 768) {
+                removeGallMob();
+                gallTitle.textContent = document.querySelector('.gallery__nav-item.active').textContent;
+            }
         }
     }
 
     document.querySelector('.gallery__nav-item').click();
-}
 
-galleryTabs();
+    const gallNavMob = () => {
 
-export const gallNavMob = () => {
-    const gallTitle = document.querySelector('.gallery__nav-title');
-    const gallNav = document.querySelector('.gallery__nav');
-    const body = document.querySelector('#body');
-    const gallNavExit = document.querySelector('.gallery__nav-exit');
+        gallTitle.onclick = () => {
+            gallNav.classList.add('active');
+            gallTitle.classList.add('active');
+            body.classList.add('lok');
+        }
 
-    gallTitle.onclick = () => {
-        gallNav.classList.add('active');
-        gallTitle.classList.add('active');
-        body.classList.add('lok');
+        gallNavExit.onclick = function gallNavRemActive() {
+            removeGallMob();
+        }
+
+        
     }
 
-    gallNavExit.onclick = function gallNavRemActive () {
+    function removeGallMob() {
         gallNav.classList.remove('active');
         gallTitle.classList.remove('active');
         body.classList.remove('lok');
-    }  
+    }
+
+    gallNavMob();
 }
 
-gallNavMob();
+galleryTabs();
