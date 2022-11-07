@@ -1,54 +1,53 @@
-export const getItem = () => {
-    const galleryBodySection = document.getElementsByClassName('gallery__body-section');
-    const colectionNav = document.getElementsByClassName('gallery__nav-item');
+export const galleryTabs = () => {
+    const tabBtn = document.querySelectorAll('.gallery__nav-item');
+    const tabsItems = document.querySelectorAll('.gallery__body-section');
 
-    // start active element
-    colectionNav[0].classList.add('active');
-    galleryBodySection[0].classList.add('active');
+    tabBtn.forEach(function (item) {
+        onTabClick(item);
+    });
 
-    window.onload = function () {
-        document.addEventListener('click', documentActions);
+    function onTabClick(item) {
+        item.onclick = () => {
+            const tabId = item.getAttribute('data-gall-tab');
+            const curentTabb = document.querySelector(tabId);
 
-        function documentActions(a) {
-            const targetElement = a.target;
+            if (!item.classList.contains('active')) {
+                tabBtn.forEach(function (item) {
+                    item.classList.remove('active');
+                });
 
-            if (targetElement.classList.contains('gallery__nav-item')) {
-                removeActive();
-                targetElement.classList.add('active');
-                addActeveSection(targetElement);
+                tabsItems.forEach(function (item) {
+                    item.classList.remove('active');
+                });
+
+                item.classList.add('active');
+                curentTabb.classList.add('active');
             }
         }
     }
 
-    function removeActive() {
-        for (let item of colectionNav) {
-            item.classList.remove('active');
-        }
-    }
-
-    function addActeveSection(targetElement) {
-        if (targetElement.classList.contains('-bedroom')) {
-            for (let item of galleryBodySection) {
-                (item.classList.contains('-bedroom')) ? item.classList.add('active') : item.classList.remove('active');
-            }
-        } else if (targetElement.classList.contains('-living')) {
-            for (let item of galleryBodySection) {
-                (item.classList.contains('-living')) ? item.classList.add('active') : item.classList.remove('active');
-            }
-        } else if (targetElement.classList.contains('-office')) {
-            for (let item of galleryBodySection) {
-                (item.classList.contains('-office')) ? item.classList.add('active') : item.classList.remove('active');
-            }
-        } else if (targetElement.classList.contains('-dining')) {
-            for (let item of galleryBodySection) {
-                (item.classList.contains('-dining')) ? item.classList.add('active') : item.classList.remove('active');
-            }
-        } else if (targetElement.classList.contains('-chair')) {
-            for (let item of galleryBodySection) {
-                (item.classList.contains('-chair')) ? item.classList.add('active') : item.classList.remove('active');
-            }
-        }
-    }
+    document.querySelector('.gallery__nav-item').click();
 }
 
-getItem();
+galleryTabs();
+
+export const gallNavMob = () => {
+    const gallTitle = document.querySelector('.gallery__nav-title');
+    const gallNav = document.querySelector('.gallery__nav');
+    const body = document.querySelector('#body');
+    const gallNavExit = document.querySelector('.gallery__nav-exit');
+
+    gallTitle.onclick = () => {
+        gallNav.classList.add('active');
+        gallTitle.classList.add('active');
+        body.classList.add('lok');
+    }
+
+    gallNavExit.onclick = function gallNavRemActive () {
+        gallNav.classList.remove('active');
+        gallTitle.classList.remove('active');
+        body.classList.remove('lok');
+    }  
+}
+
+gallNavMob();
